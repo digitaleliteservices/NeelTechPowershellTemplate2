@@ -78,20 +78,20 @@ export const BatchSchedule = () => {
               </div>
 
               <div className="mb-10">
-                {mode.originalPrice && (
+                {/* {mode.originalPrice && (
                   <div className="text-deep/30 line-through text-lg font-bold">
                     {mode.originalPrice}
                   </div>
-                )}
-                <div className="flex items-baseline gap-2">
+                )} */}
+                {/* <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-heading font-extrabold text-deep tracking-tighter">{mode.price}</span>
                   {mode.price.includes('₹') && <span className="text-deep/40 text-sm font-bold">incl. taxes</span>}
-                </div>
-                {mode.savings !== "Bulk Discount" && mode.originalPrice && (
+                </div> */}
+                {/* {mode.savings !== "Bulk Discount" && mode.originalPrice && (
                   <div className="mt-2 text-success text-sm font-bold flex items-center gap-1">
                     <CheckCircle2 size={14} /> You Save {mode.savings}
                   </div>
-                )}
+                )} */}
               </div>
 
               <ul className="space-y-5 mb-12 flex-grow">
