@@ -24,7 +24,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-black mb-1">Speak with a Consultant</p>
-                  <a href="tel:+916361866299" className="text-xl font-bold hover:text-secondary transition-colors tracking-tight">+91 6361866299</a>
+                  <a href="tel:+916361866299" className="text-sm lg:text-xl md:text-xl  font-bold hover:text-secondary transition-colors tracking-tight">+91 6361866299</a>
                 </div>
               </div>
               <div className="flex gap-5 items-center group">
@@ -33,7 +33,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-black mb-1">Corporate Inquiries</p>
-                  <a href="mailto:info@neeltechnologies.net" className="text-xl font-bold hover:text-secondary transition-colors tracking-tight">info@neeltechnologies.net</a>
+                  <a href="mailto:info@neeltechnologies.net" className="text-sm lg:text-xl md:text-xl  font-bold hover:text-secondary transition-colors tracking-tight">info@neeltechnologies.net</a>
                 </div>
               </div>
             </div>

@@ -135,7 +135,7 @@ export const Footer = () => {
                 />
                 <button 
                   disabled={isSubscribing}
-                  className="bg-secondary px-4 py-2 rounded-lg hover:brightness-110 transition-all font-bold text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-secondary px-1 py-1 rounded-lg hover:brightness-110 transition-all font-bold text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubscribing ? (
                     <Loader2 size={16} className="animate-spin" />
