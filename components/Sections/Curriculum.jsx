@@ -38,7 +38,7 @@ export const Curriculum = () => {
           <div className="mt-16 text-center">
             <div className="flex items-center justify-center gap-6">
               <div className="h-px w-20 bg-deep/10"></div>
-              <span className="text-[11px] font-extrabold uppercase tracking-[0.4em] text-deep/40">Includes 5 Real-World Projects</span>
+              <span className="text-[11px] font-extrabold uppercase tracking-[0.4em] text-deep/40">Includes Real-World Projects</span>
               <div className="h-px w-20 bg-deep/10"></div>
             </div>
           </div>

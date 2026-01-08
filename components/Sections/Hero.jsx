@@ -87,7 +87,7 @@ export const Hero = () => {
       className="
         relative
         min-h-screen
-        pt-24 sm:pt-28 lg:pt-32
+        pt-0 sm:pt-28 lg:pt-0
         pb-16
         flex flex-col lg:flex-row items-start lg:items-center
         bg-gradient-to-br

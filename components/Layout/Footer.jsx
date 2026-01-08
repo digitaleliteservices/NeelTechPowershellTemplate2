@@ -78,11 +78,24 @@ export const Footer = () => {
             <p className="text-white/50 text-sm leading-relaxed mb-6">
               Empowering IT professionals since 2020 with world-class cloud automation and PowerShell training. ISO Certified Training Partner.
             </p>
+             <div className="pt-0 mb-4">
+              <p className="text-sm text-gray-400 ml-2 mb-2">Want More Information?</p>
+              <a 
+                href="https://www.neeltechnologies.com/"
+                className="inline-flex items-center text-[#ffff] hover:text-blue-600 font-medium text-sm rounded-lg transition-all duration-200 group"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                www.neeltechnologies.com
+                <ExternalLink size={12} className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+            </div>
+           
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Facebook size={18} /></a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Twitter size={18} /></a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Youtube size={18} /></a>
+              <a href="https://www.facebook.com/neeltechno" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Facebook size={18} /></a>
+              <a href="https://x.com/NeelTechnologi1" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Twitter size={18} /></a>
+              <a href="https://www.instagram.com/neeltechnologies/" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Instagram size={18} /></a>
+              <a href="https://www.youtube.com/channel/UC9IBxs7m2kcSNolSll3AYLA" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><Youtube size={18} /></a>
             </div>
           </div>
 
@@ -103,11 +116,11 @@ export const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-lg mb-6">Popular Courses</h4>
             <ul className="space-y-4 text-white/50 text-sm">
-              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="#curriculum" onClick={(e) => handleScrollTo(e, 'curriculum')} className="flex items-center gap-2"><ExternalLink size={14} /> PowerShell for SysAdmins</a></li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="#home" onClick={(e) => handleScrollTo(e, 'home')} className="flex items-center gap-2"><ExternalLink size={14} /> AWS Solutions Architect</a></li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')} className="flex items-center gap-2"><ExternalLink size={14} /> Azure DevOps Masterclass</a></li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')} className="flex items-center gap-2"><ExternalLink size={14} /> Cloud Security Fundamentals</a></li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')} className="flex items-center gap-2"><ExternalLink size={14} /> Terraform on AWS</a></li>
+              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="https://www.neeltechnologies.com/aws-training-certification-course"  className="flex items-center gap-2"><ExternalLink size={14} /> AWS Cloud</a></li>
+              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="https://www.neeltechnologies.com/azure-training-certification-course"  className="flex items-center gap-2"><ExternalLink size={14} /> Azure Cloud</a></li>
+              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="https://www.neeltechnologies.com/powershell-training-certification-course"  className="flex items-center gap-2"><ExternalLink size={14} /> Linux / Powershell</a></li>
+              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="https://www.neeltechnologies.com/python-training-certification-course" className="flex items-center gap-2"><ExternalLink size={14} /> Python / GCP</a></li>
+              <li className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><a href="https://www.neeltechnologies.com/cyber-security-training-certification-course"  className="flex items-center gap-2"><ExternalLink size={14} /> Ethical Hacking</a></li>
             </ul>
           </div>
 
@@ -135,12 +148,12 @@ export const Footer = () => {
                 />
                 <button 
                   disabled={isSubscribing}
-                  className="bg-secondary px-1 py-1 rounded-lg hover:brightness-110 transition-all font-bold text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-secondary px-1 py-1 mr-4 rounded-lg hover:brightness-110 transition-all font-bold text-sm flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubscribing ? (
-                    <Loader2 size={16} className="animate-spin" />
+                    <Loader2 size={12} className="animate-spin" />
                   ) : (
-                    <>Join <Send size={14} /></>
+                    <>Join <Send size={10} /></>
                   )}
                 </button>
               </form>

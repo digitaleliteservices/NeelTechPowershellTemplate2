@@ -77,12 +77,22 @@ export const About = () => {
 
             <div className="pt-8 border-t border-deep/10 dark:border-white/10 flex items-center gap-6">
               <div id="about-team-avatars" className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
+                {[1980, 4252, 35, 404].map((i) => (
                   <img key={i} className="w-12 h-12 rounded-full border-4 border-cream dark:border-zinc-900 shadow-sm" src={`https://api.dicebear.com/7.x/avataaars/svg?seed=Trainer${i}`} alt="Trainer" />
                 ))}
               </div>
               <p className="text-body-sm text-deep/60 dark:text-white/40"><span className="font-bold text-deep dark:text-white">50+ Expert Trainers</span> ready to guide you.</p>
+               
             </div>
+            <div class="text-center">
+            <h1 class="mb-4 mt-8 text-base font-bold">Want More Information? Let's Go Through This Site</h1>
+            <a href="https://www.neeltechnologies.com/" 
+              class="text-blue-600 hover:text-blue-800 font-mediam text-base border-0 border-blue-600 hover:border-blue-800 px-2 py-2 rounded-lg inline-block transition duration-300"
+              target="_blank" 
+              rel="noopener noreferrer">
+                www.neeltechnologies.com
+            </a>
+        </div>
           </div>
 
           <div className="order-1 lg:order-2">

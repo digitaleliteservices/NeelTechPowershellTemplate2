@@ -43,7 +43,7 @@ export const TRANSLATIONS = {
     about_mission: "Our Mission",
     about_mission_desc: "Empowering 10k+ architects by 2026 with production-ready skills.",
     about_quality: "Global Quality",
-    about_quality_desc: "ISO 9001:2015 certified training methodology and labs.",
+    about_quality_desc: "ISO 9001:2020 certified training methodology and labs.",
     faq_title: "Frequently Asked Questions",
     faq_search: "Search your questions...",
     success_stories_title: "Success Stories",
@@ -105,55 +105,55 @@ export const SYLLABUS_MODULES = [
     id: 1,
     title: "Introduction",
     description: "Fundamentals of PowerShell and its integration with AWS environment.",
-    lessons: ["PowerShell CLI basics", "AWS SDK for PowerShell installation", "Setting up IAM credentials"]
+    lessons: ["What is power shell","Power shell cm delts","Power shell Snapins","Power shell Modules","Power shell Remoting","Navigating Power shell"]
   },
   {
     id: 2,
     title: "PowerShell pipeline scripts and syntax",
     description: "Mastering the powerful pipeline feature to chain commands effectively.",
-    lessons: ["Pipeline object binding", "Filtering with Where-Object", "Transformation with Select-Object"]
+    lessons: ["Pipelines.","Scripts.","Syntax, outputs and scripts block."]
   },
   {
     id: 3,
     title: "Variables and data types",
     description: "Handling data structures and variables for complex automation tasks.",
-    lessons: ["Scalar variables", "Arrays and HashTables", "Custom objects (PSCustomObject)"]
+    lessons: ["Variable and data types.","Variable scope.","Collection."]
   },
   {
     id: 4,
     title: "Security",
     description: "Ensuring secure script execution and secret management in cloud.",
-    lessons: ["Execution policies", "Secure strings", "AWS Secrets Manager integration"]
+    lessons: ["Script execution.","Signing Scripts.","Requesting credentials and using secure string.","Securing remote session."]
   },
   {
     id: 5,
     title: "Remote Management",
     description: "Managing AWS EC2 instances and remote servers through PowerShell.",
-    lessons: ["PSRemoting (WS-Man & SSH)", "AWS Systems Manager Run Command", "Managing fleet at scale"]
+    lessons: ["Configuring Remote Management","Using power shell Remoting","Using jobs"]
   },
   {
     id: 6,
     title: "Script flow control statement",
     description: "Logic implementation using loops and conditional statements.",
-    lessons: ["If/Else & Switch", "ForEach-Object vs ForEach loop", "While and Do-While loops"]
+    lessons: ["Foreach and for","While/Do/Do while","If/switch","Break/Continue"]
   },
   {
     id: 7,
     title: "Function, Filters and Modules",
     description: "Modularizing code for reusability and production-grade deployments.",
-    lessons: ["Writing advanced functions", "Building custom modules", "Version control with Git"]
+    lessons: ["Function and filters","Scripting with function and parameters","Modules"]
   },
   {
     id: 8,
     title: "Error Handling",
     description: "Building resilient scripts with robust error catching mechanisms.",
-    lessons: ["Try/Catch/Finally", "ErrorAction preferences", "Logging and reporting"]
+    lessons: ["Error","Script debugging"]
   },
   {
     id: 9,
     title: "Administrative uses",
     description: "Real-world AWS administrative scenarios and automation projects.",
-    lessons: ["Automated backups", "Resource tagging at scale", "CloudWatch alert responses"]
+    lessons: ["Mainpulating files and folders","Modifying registry data","Working with events","Working with active directory object"]
   }
 ];
 

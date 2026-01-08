@@ -113,9 +113,9 @@ export const BatchSchedule = () => {
       title: "Self Paced Training",
       icon: <Play size={24} className="text-accent" />,
       features: ["2 Month e-learning access", "Curated Recorded Lectures", "Dedicated Learning Portal", "Email Support (24h SLA)"],
-      originalPrice: "₹35,713",
-      price: "₹24,999",
-      savings: "₹10,714",
+      originalPrice: "",
+      price: "",
+      savings: "",
       bestFor: "Working Professionals",
       id: "self-paced-batch"
     },
