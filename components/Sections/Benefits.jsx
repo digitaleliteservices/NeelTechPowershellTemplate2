@@ -296,20 +296,13 @@ const Benefits = () => {
       <div className="container mx-auto max-w-7xl px-6">
         {/* Professional Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            {/* <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">IT</span>
-            </div> */}
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              IT-Consulting & Training
-            </h2>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Premier <span className="text-blue-600 dark:text-blue-400">Learning Benefits</span>
+         
+          <h1 className="text-xl md:text-5xl font-bold text-gray-900 dark:text-white mb-24">
+            Why Choose Us <span className="text-blue-600 dark:text-blue-400"> ?</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          {/* <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Professional-grade learning solutions designed for IT consultants and corporate trainers
-          </p>
+          </p> */}
         </div>
 
         {/* Category Navigation */}

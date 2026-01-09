@@ -217,12 +217,12 @@ export const BatchSchedule = () => {
                       ? "Hi I am interested in Corporate Training"
                       : "Hi I want to book a Free Demo";
                     window.open(
-                      `https://wa.me/916361866299?text=${encodeURIComponent(msg)}`,
+                      `https://chat.whatsapp.com/I0yVSOKX6DRIfMsvlcBN76`,
                       "_blank"
                     );
                   }}
                 >
-                  {mode.title === "Corporate Training" ? "Request Quote" : "Book Free Demo"}
+                  {mode.title === "Corporate Training" ? "Request Quote" : "Join Free Demo"}
                 </Button>
               </div>
             </div>

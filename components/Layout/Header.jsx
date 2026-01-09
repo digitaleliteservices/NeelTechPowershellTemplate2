@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Phone, ChevronDown, MessageCircle } from 'lucide-react';
+import { Menu, X,PlayCircle, Phone, ChevronDown, MessageCircle } from 'lucide-react';
 import { gsap } from 'gsap';
 import { Button } from '../UI/Button';
 import { useTranslation } from '../UI/LanguageToggle';
@@ -55,6 +55,7 @@ export const Header = () => {
     { name: t('nav_syllabus'), href: 'curriculum' },
     { name: t('nav_testimonials'), href: 'testimonials' },
     { name: t('nav_faq'), href: 'faq' },
+    // { name: t('Enroll Now'), href: 'enroll-now' },
   ];
 
   const handleNavClick = (e, targetId) => {
@@ -145,11 +146,13 @@ export const Header = () => {
 
           {/* Desktop Enroll Button */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>
-              <Button variant="primary" className="h-[42px] px-6 text-sm">
-                Enroll Now
+            
+              <Button variant="primary" onClick={() =>
+                window.open("https://chat.whatsapp.com/BfRM70pDlas6Ysqg0Y8ajA", "_blank")
+              } className="h-[42px] px-6 text-sm">
+                <PlayCircle size={24} /> {t("btn_demo")}
               </Button>
-            </a>
+           
           </div>
 
           {/* Hamburger */}

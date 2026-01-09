@@ -4,7 +4,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import { Button } from "../UI/Button";
 import { Eye, PlayCircle, ShieldCheck, Zap, Sparkles } from "lucide-react";
 import { useTranslation } from "../UI/LanguageToggle";
-import neelLogo from "../../assets/neelLogo.png";
+import powershellLogo from "../../assets/powershellLogo.png";
 import "./hero.css";
 
 gsap.registerPlugin(TextPlugin);
@@ -192,7 +192,7 @@ export const Hero = () => {
                 window.open("https://wa.me/916361866299", "_blank")
               }
             >
-              <PlayCircle size={24} /> {t("btn_demo")}
+              Enroll Now
             </Button>
 
             <Button
@@ -256,14 +256,14 @@ export const Hero = () => {
 
             <div className="w-20 h-20 lg:w-24 lg:h-24 bg-primary/10 rounded-3xl flex items-center justify-center mb-6 lg:mb-10 mx-auto">
               <img
-                src={neelLogo}
-                alt="Neel Logo"
+                src={powershellLogo}
+                alt="Powershell Logo"
                 className="w-12 lg:w-12 h-auto"
               />
             </div>
 
             <h3 className="text-xl lg:text-3xl font-heading font-extrabold text-primary dark:text-white mb-1 lg:mb-3 text-center">
-              AWS SOLUTIONS ARCHITECT
+              Powershell Automation Training
             </h3>
             <p className="text-secondary text-sm lg:text-xl font-bold italic mb-6 lg:mb-10 text-center">
               Professional Certification
