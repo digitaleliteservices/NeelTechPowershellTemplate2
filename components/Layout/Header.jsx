@@ -34,12 +34,12 @@ export const Header = () => {
       tl.fromTo(
         logoCircleRef.current,
         { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 1, delay: 0.2 }
+        { scale: 1, opacity: 1, delay: 0.2 },
       ).fromTo(
         [logoNRef.current, logoTRef.current],
         { y: 20, opacity: 0, scale: 0.5 },
         { y: 0, opacity: 1, scale: 1, stagger: 0.1 },
-        "-=0.4"
+        "-=0.4",
       );
     }
 
@@ -88,6 +88,26 @@ export const Header = () => {
     }
   };
 
+  const handlePayment = async () => {
+    try {
+      // const res = await fetch("http://localhost:9000/api/create-payment", {
+      //   method: "POST",
+      // });
+
+      const res = await fetch("https://api.neeltechnologies.com/api/create-payment", {
+        method: "POST",
+      });
+
+      const data = await res.json();
+      console.log("data", data);
+
+      window.location.href = data.redirectUrl;
+    } catch (err) {
+      console.error(err);
+      alert("Payment initiation failed");
+    }
+  };
+
   return (
     <>
       {/* Header */}
@@ -109,15 +129,14 @@ export const Header = () => {
           </a>
           {/* Mobile Join Free Demo Button */}
           <button
-            onClick={() =>
-              window.open(
-                "https://chat.whatsapp.com/BfRM70pDlas6Ysqg0Y8ajA",
-                "_blank"
-              )
-            }
+            onClick={handlePayment}
             className="md:hidden text-xs font-bold px-3 py-2 rounded-full bg-secondary text-white whitespace-nowrap"
           >
-            Join Free Demo
+            <span className="flex items-center gap-1">
+              Join Demo
+              <span className="line-through text-[10px] text-white">₹999</span>
+              <span className="font-bold">₹39</span>
+            </span>
           </button>
 
           {/* Desktop Nav */}
@@ -175,17 +194,23 @@ export const Header = () => {
 
           {/* Desktop Enroll Button */}
           <div className="hidden md:flex items-center gap-6">
-            <Button
+            {/* <Button
               variant="primary"
               onClick={() =>
                 window.open(
                   "https://chat.whatsapp.com/BfRM70pDlas6Ysqg0Y8ajA",
-                  "_blank"
+                  "_blank",
                 )
               }
               className="h-[42px] px-6 text-sm"
             >
               <PlayCircle size={24} /> {t("btn_demo")}
+            </Button> */}
+            <Button onClick={handlePayment} className="flex items-center gap-2">
+              <PlayCircle size={20} />
+              <span>Join Demo</span>
+              <span className="line-through text-sm text-white-400">₹999</span>
+              <span className="text-yellow-400 font-bold">₹39</span>
             </Button>
           </div>
 

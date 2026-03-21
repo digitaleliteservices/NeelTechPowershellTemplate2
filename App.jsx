@@ -12,6 +12,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 // Add this import
 import VideoSection from "./components/Sections/VideoSection";
+import PaymentSuccess from "./components/Sections/PaymentSuccess";
 
 import { CardSkeleton } from "./components/UI/Skeleton";
 import { ErrorBoundary } from "./components/UI/ErrorBoundary";
@@ -27,28 +28,28 @@ import StickySocialLinks from "./components/Layout/StickySocialLinks";
 const Curriculum = lazy(() =>
   import("./components/Sections/Curriculum").then((m) => ({
     default: m.Curriculum,
-  }))
+  })),
 );
 const BatchSchedule = lazy(() =>
   import("./components/Sections/BatchSchedule").then((m) => ({
     default: m.BatchSchedule,
-  }))
+  })),
 );
 const Testimonials = lazy(() =>
   import("./components/Sections/Testimonials").then((m) => ({
     default: m.Testimonials,
-  }))
+  })),
 );
 const FAQ = lazy(() =>
-  import("./components/Sections/FAQ").then((m) => ({ default: m.FAQ }))
+  import("./components/Sections/FAQ").then((m) => ({ default: m.FAQ })),
 );
 const Contact = lazy(() =>
-  import("./components/Sections/Contact").then((m) => ({ default: m.Contact }))
+  import("./components/Sections/Contact").then((m) => ({ default: m.Contact })),
 );
 const Benefits = lazy(() =>
   import("./components/Sections/Benefits").then((m) => ({
     default: m.Benefits,
-  }))
+  })),
 );
 
 gsap.registerPlugin(ScrollTrigger);
@@ -73,7 +74,7 @@ const App = () => {
             start: "top 85%",
             toggleActions: "play none none none",
           },
-        }
+        },
       );
     });
 
@@ -298,6 +299,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
         </Routes>
       </div>
     </LanguageProvider>
