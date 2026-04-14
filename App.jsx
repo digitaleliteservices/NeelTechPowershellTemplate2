@@ -12,7 +12,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 // Add this import
 import VideoSection from "./components/Sections/VideoSection";
-import PaymentSuccess from "./components/Pages/PaymentSuccesss";
+import PaymentSuccess from "./components/Pages/PaymentSuccess";
 
 import { CardSkeleton } from "./components/UI/Skeleton";
 import { ErrorBoundary } from "./components/UI/ErrorBoundary";
