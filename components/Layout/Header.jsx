@@ -16,6 +16,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
 
   const logoNRef = useRef(null);
@@ -88,23 +89,52 @@ export const Header = () => {
     }
   };
 
-  const handlePayment = async () => {
-    try {
-      // const res = await fetch("http://localhost:9000/api/create-payment", {
-      //   method: "POST",
-      // });
+  // const handlePayment = async () => {
+  //   try {
+  //     const res = await fetch("https://api.neeltechnologies.com/api/create-payment", {
+  //       method: "POST",
+  //     });
 
-      const res = await fetch("https://api.neeltechnologies.com/api/create-payment", {
-        method: "POST",
-      });
+  //     const data = await res.json();
+  //     console.log("data", data);
+
+  //     window.location.href = data.redirectUrl;
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("Payment initiation failed");
+  //   }
+  // };
+
+  const handlePayment = async () => {
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      // https://api.neeltechnologies.com
+      const res = await fetch(
+        // "http://localhost:9000/api/active-dir/create-payment",
+        "https://api.neeltechnologies.com/api/powershell/create-payment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify({ amount: 39 }),
+          body: JSON.stringify({}),
+        },
+      );
 
       const data = await res.json();
       console.log("data", data);
 
-      window.location.href = data.redirectUrl;
-    } catch (err) {
-      console.error(err);
-      alert("Payment initiation failed");
+      if (data?.redirectUrl) {
+        localStorage.setItem("orderId", data.orderId); // ✅ SAVE THIS
+        window.location.href = data.redirectUrl;
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -267,15 +297,19 @@ export const Header = () => {
             ))}
 
             {/* Mobile Enroll Button */}
-            <a
+            {/* <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
               className="w-full mt-10"
+            > */}
+            <Button
+              variant="primary"
+              onClick={handlePayment}
+              className="w-full h-14 text-xl"
             >
-              <Button variant="primary" className="w-full h-14 text-xl">
-                Enroll Now
-              </Button>
-            </a>
+              Enroll Now
+            </Button>
+            {/* </a> */}
           </div>
         </div>
       )}

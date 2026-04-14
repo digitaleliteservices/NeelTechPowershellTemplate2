@@ -102,7 +102,7 @@
 //   );
 // };
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../UI/Button";
 import {
   Calendar,
@@ -114,6 +114,7 @@ import {
 } from "lucide-react";
 
 export const BatchSchedule = () => {
+  const [loading, setLoading] = useState(false);
   const modes = [
     {
       title: "Self Paced Training",
@@ -163,26 +164,59 @@ export const BatchSchedule = () => {
     // },
   ];
 
-  const handlePayment = async () => {
-    try {
-      // const res = await fetch("http://localhost:9000/api/create-payment", {
-      //   method: "POST",
-      // });
+  // const handlePayment = async () => {
+  //   try {
+  //     // const res = await fetch("http://localhost:9000/api/create-payment", {
+  //     //   method: "POST",
+  //     // });
 
+  //     const res = await fetch(
+  //       "https://api.neeltechnologies.com/api/create-payment",
+  //       {
+  //         method: "POST",
+  //       },
+  //     );
+
+  //     const data = await res.json();
+  //     console.log("data", data);
+
+  //     window.location.href = data.redirectUrl;
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("Payment initiation failed");
+  //   }
+  // };
+
+  const handlePayment = async () => {
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      // https://api.neeltechnologies.com
       const res = await fetch(
-        "https://api.neeltechnologies.com/api/create-payment",
+        // "http://localhost:9000/api/active-dir/create-payment",
+        "https://api.neeltechnologies.com/api/powershell/create-payment",
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify({ amount: 39 }),
+          body: JSON.stringify({}),
         },
       );
 
       const data = await res.json();
       console.log("data", data);
 
-      window.location.href = data.redirectUrl;
-    } catch (err) {
-      console.error(err);
-      alert("Payment initiation failed");
+      if (data?.redirectUrl) {
+        localStorage.setItem("orderId", data.orderId); // ✅ SAVE THIS
+        window.location.href = data.redirectUrl;
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 

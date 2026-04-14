@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { Button } from "../UI/Button";
@@ -14,6 +14,7 @@ export const Hero = () => {
   const badgeRef = useRef(null);
   const meshRef = useRef(null);
   const { t, lang } = useTranslation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Animate headline text
@@ -63,7 +64,7 @@ export const Hero = () => {
           repeat: -1,
           ease: "none",
           stagger: 0.5,
-        }
+        },
       );
     }
   }, [lang, t]);
@@ -79,6 +80,39 @@ export const Hero = () => {
       top: elementPosition + window.pageYOffset - offset,
       behavior: "smooth",
     });
+  };
+
+  const handlePayment = async () => {
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      // https://api.neeltechnologies.com
+      const res = await fetch(
+        // "http://localhost:9000/api/active-dir/create-payment",
+        "https://api.neeltechnologies.com/api/powershell/create-payment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify({ amount: 39 }),
+          body: JSON.stringify({}),
+        },
+      );
+
+      const data = await res.json();
+      console.log("data", data);
+
+      if (data?.redirectUrl) {
+        localStorage.setItem("orderId", data.orderId); // ✅ SAVE THIS
+        window.location.href = data.redirectUrl;
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -186,11 +220,12 @@ export const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 sm:pt-6">
             <Button
-              variant="primary"
+              // variant="primary"
+              onClick={handlePayment}
               className="w-full sm:min-w-[240px] h-[52px] sm:h-[60px] text-base sm:text-lg"
-              onClick={() =>
-                window.open("https://wa.me/916361866299", "_blank")
-              }
+              // onClick={() =>
+              //   window.open("https://wa.me/916361866299", "_blank")
+              // }
             >
               Enroll Now
             </Button>
